@@ -1,0 +1,39 @@
+# NOTICE
+
+## This skill
+
+The code, scripts, templates and original documentation in this skill are
+licensed under the Apache License, Version 2.0 (see `LICENSE`).
+Copyright (c) 2026 Seeed Studio.
+
+## Upstream knowledge (wiki)
+
+The knowledge hub (`knowhubs/reCamera_KnowHub/`) is distilled from the reCamera
+wiki:
+
+- Repository: https://github.com/Seeed-Studio/wiki-documents
+- Branch: `docusaurus-version`
+- Path: `sites/en/docs/Edge/reCamera/`
+- License: GPL-3.0
+
+The skill does **not** redistribute the upstream wiki markdown. It stores page
+paths, commands and original one-line summaries. Page paths and factual
+commands are not copyrightable; any text that is substantially copied or
+adapted from the wiki remains subject to GPL-3.0 and is not relicensed by the
+Apache-2.0 license of this skill. Seeed Studio is the copyright holder of the wiki and
+may license that material separately.
+
+If you add content copied or adapted from the wiki, record it here and confirm
+the license terms are compatible. Publishing this skill as an official Seeed
+project should be checked with the wiki maintainers for the combined licensing.
+
+## Third-party components
+
+- **jmuxer** — `templates/live-ui/vendor/jmuxer.min.js`, MIT; see
+  `templates/live-ui/vendor/LICENSE.jmuxer`.
+- **TPU-MLIR** and the `sophgo/tpuc_dev` Docker image — referenced as external
+  conversion tooling, not distributed with this skill; they keep their own
+  licenses.
+- **`.cvimodel` model files** — not distributed; downloaded from Seeed or
+  upstream sources under their own terms.
+- **reCamera firmware / OS** — not distributed.

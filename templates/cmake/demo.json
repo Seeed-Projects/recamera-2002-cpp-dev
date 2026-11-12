@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "{{NAME}}",
+  "version": "{{VERSION}}",
+  "device": {"model": "reCamera 2002", "os_min": "0.2.4"},
+  "build": {
+    "kind": "cmake",
+    "source_dir": "src",
+    "binary": "{{BINARY}}",
+    "cmake_args": []
+  },
+  "runtime": {
+    "executable": "{{BINARY}}",
+    "args": [],
+    "env": {},
+    "sudo": false,
+    "timeout_s": 10,
+    "expect_stdout": ["hello", "{{NAME}}"]
+  },
+  "evaluation": {"task": "{{TASK}}", "thresholds": {}},
+  "model": null,
+  "inputs": {"camera": false, "video": false, "images": false},
+  "smoke": {
+    "kind": "host-logic",
+    "command": ["sh", "smoke.sh"],
+    "timeout_s": 10,
+    "expect_stdout": ["self-test ok"]
+  },
+  "evidence": {"required_stages": ["static", "offline", "device-upload", "device-run"]}
+}

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Build and runtime artifacts
+dist/
+build/
+live-session/
+*.log
+server.json
+launch.json
+smoke-report.json
+build-report.json
+probe.json
+*.tar.gz
+*.zip
+
+# Backups and editor/OS files
+*.bak
+*.bak-*
+*.orig
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Local editor settings are intentionally not ignored so the CMake path works
+# out of the box; remove this comment if you prefer a minimal repository.

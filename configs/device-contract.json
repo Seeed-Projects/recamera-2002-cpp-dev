@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "generated_from": "live probe of reCamera 2002 (Buildroot 2021.05, Linux 5.10.4, riscv64)",
+  "devices": {
+    "reCamera 2002": {
+      "arch": "riscv64",
+      "os": {
+        "family": "Buildroot",
+        "version_path": "/etc/os-release",
+        "api_version_path": "/api/version",
+        "tested": ["0.2.4"],
+        "minimum": "0.2.4",
+        "minimum_note": "OS 0.2.4 and newer are supported; firmware older than 0.2.4 must be probed and reported as unverified."
+      },
+      "paths": {
+        "userdata": "/userdata",
+        "demo_root": "/userdata/demos",
+        "staging_root": "/userdata/.demo-stage",
+        "models": "/userdata/Models",
+        "local_models": "/userdata/local/models",
+        "sdk_release": "/mnt/system/sdk-release",
+        "system_lib": "/mnt/system/lib",
+        "system_usr_lib": "/mnt/system/usr/lib",
+        "system_third_party_lib": "/mnt/system/usr/lib/3rd"
+      },
+      "runtime_env": {
+        "LD_LIBRARY_PATH": "/mnt/system/lib:/mnt/system/usr/lib:/mnt/system/usr/lib/3rd"
+      },
+      "required_tools": ["sh", "curl", "sha256sum", "setsid", "tar", "python3", "ffmpeg", "aplay"],
+      "no_local_compiler": true,
+      "ssh_user": "recamera",
+      "sudo_requires_password": true,
+      "default_web_ui": "http://<host>/",
+      "default_api_version": "http://<host>/api/version",
+      "uart": {
+        "baud": 115200,
+        "notes": "3.3V UART, GND/RX/TX; not required for demo deployment"
+      }
+    }
+  },
+  "allowed_service_controls": {
+    "node_red": "S03node-red",
+    "sscma_node": "S91sscma-node",
+    "supervisor": "S93sscma-supervisor"
+  },
+  "forbidden_service_controls": [
+    "S50sshd",
+    "S40network",
+    "S71dhcpcd",
+    "S80dnsmasq",
+    "S70hardware",
+    "S99user"
+  ],
+  "camera_arbitration": {
+    "typically_running": ["S03node-red", "S91sscma-node", "S93sscma-supervisor"],
+    "warning": "Stopping S93sscma-supervisor takes down the Web UI and Studio; a demo that stops it must restore it after testing."
+  },
+  "evidence": {
+    "levels": ["static", "offline", "host-baseline", "device-upload", "device-run", "task-quality"],
+    "required_device_fields": ["host", "device_model", "os_version", "timestamp", "command", "returncode"]
+  }
+}

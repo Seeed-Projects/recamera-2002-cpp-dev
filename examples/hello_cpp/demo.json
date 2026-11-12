@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "name": "hello_cpp",
+  "version": "1.0.0",
+  "device": {"model": "reCamera 2002", "os_min": "0.2.4"},
+  "build": {"kind": "cpp", "source_dir": "src", "sources": ["main.c"], "binary": "hello_cpp"},
+  "runtime": {
+    "executable": "hello_cpp",
+    "args": [],
+    "env": {},
+    "sudo": true,
+    "long_running": false,
+    "timeout_s": 10,
+    "expect_stdout": ["hello recamera"]
+  },
+  "evaluation": {"task": "custom", "thresholds": {}},
+  "model": null,
+  "inputs": {"camera": false, "video": false, "images": false}
+}

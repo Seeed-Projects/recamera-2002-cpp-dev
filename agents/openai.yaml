@@ -1,0 +1,7 @@
+interface:
+  display_name: "reCamera 2002 C++ Dev"
+  short_description: "Build, deploy, and live-view reCamera 2002 demos; the default delivery is a clickable URL, with LAN sharing and browser actions opt-in."
+  default_prompt: "Use $recamera-2002-cpp-dev to build a reCamera 2002 demo, deploy it, and finish with a clickable LIVE_URL for the host-side live viewer."
+
+policy:
+  allow_implicit_invocation: false

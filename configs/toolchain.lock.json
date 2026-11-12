@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "target": "reCamera 2002 / SG200X",
+  "arch": "riscv64",
+  "libc": "musl",
+  "abi": "lp64d",
+  "minimum_gcc": "10.2.0",
+  "verified_gcc_pattern": "(Xuantie-900|10\\.2\\.0)",
+  "verified": [
+    {
+      "name": "Xuantie-900 V2.6.1 (musl, 20220906)",
+      "gcc_version": "10.2.0",
+      "arch": "riscv64",
+      "libc": "musl",
+      "source": "SDK host-tools",
+      "evidence": "used by build_demo.py for all device-verified demos to date"
+    }
+  ],
+  "search_order": [
+    "--toolchain-bin",
+    "TOOLCHAIN_BIN",
+    "$SG200X_SDK_PATH/host-tools/gcc/riscv64-linux-musl-x86_64/bin",
+    "~/host-tools/gcc/riscv64-linux-musl-x86_64/bin",
+    "PATH"
+  ],
+  "notes": [
+    "The lock records the verified floor, not the only accepted build.",
+    "Build reports always record the resolved compiler version and source hashes.",
+    "Use build_demo.py --strict-toolchain in CI to reject a unexpected toolchain."
+  ]
+}

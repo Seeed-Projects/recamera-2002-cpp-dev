@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "defaults": {
+    "min_samples": 10,
+    "pass_score": 0.6,
+    "iou_threshold": 0.5,
+    "confidence_threshold": 0.25,
+    "max_missing_frames": 0,
+    "pck_ratio": 0.2,
+    "frame_tolerance_ms": 0
+  },
+  "tasks": {
+    "detection": {
+      "metrics": ["precision", "recall", "f1"],
+      "primary_metric": "f1",
+      "threshold": 0.6,
+      "requires": ["objects"],
+      "per_class_recall": 0.6,
+      "notes": "Greedy per-class IoU matching at iou_threshold; missing frames count as false negatives."
+    },
+    "classification": {
+      "metrics": ["top1_agreement"],
+      "primary_metric": "top1_agreement",
+      "threshold": 0.6,
+      "requires": ["top1"]
+    },
+    "ocr": {
+      "metrics": ["text_similarity", "char_accuracy"],
+      "primary_metric": "text_similarity",
+      "threshold": 0.6,
+      "requires": ["text"]
+    },
+    "segmentation": {
+      "metrics": ["miou"],
+      "primary_metric": "miou",
+      "threshold": 0.6,
+      "requires": ["iou or class_iou"]
+    },
+    "pose": {
+      "metrics": ["pck"],
+      "primary_metric": "pck",
+      "threshold": 0.6,
+      "requires": ["keypoints"],
+      "notes": "PCK uses normalized keypoints or pixel keypoints plus width/height."
+    },
+    "depth": {
+      "metrics": ["custom"],
+      "primary_metric": "custom",
+      "threshold": null,
+      "requires": ["metric"],
+      "notes": "Must define an interpretable metric; multimodal review does not replace a numeric report."
+    },
+    "custom": {
+      "metrics": ["custom"],
+      "primary_metric": "custom",
+      "threshold": null,
+      "requires": ["metric"],
+      "notes": "Each frame supplies metric/value; the report states the metric definition."
+    }
+  },
+  "dataset_manifest": {
+    "required_fields": ["source", "version", "license", "samples", "selection", "cache_path"],
+    "notes": "eval/input/manifest.json must let another person reproduce the fixed input set."
+  }
+}

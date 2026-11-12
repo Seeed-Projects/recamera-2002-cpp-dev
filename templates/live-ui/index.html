@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>reCamera Live</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot" id="status-dot" aria-hidden="true"></span>
+      <span class="title">reCamera Live</span>
+      <span class="muted" id="demo-name">—</span>
+    </div>
+    <div class="metrics" id="metrics">
+      <span><b id="m-fps">—</b> fps</span>
+      <span><b id="m-bitrate">—</b> Mbps</span>
+      <span title="Device side: the true age of a detection result, from frame capture to output"><b id="m-latency">—</b> ms Result age</span>
+      <span><b id="m-det-fps">—</b> det fps</span>
+      <span><b id="m-drops">0</b> drops</span>
+      <span class="muted" id="m-device">Waiting for device…</span>
+    </div>
+  </header>
+
+  <div id="implemented-notice" class="notice hidden">
+    Demo skeleton: the camera/detection pipeline is not implemented yet; only device logs and connection status are shown.
+  </div>
+
+  <main class="layout">
+    <section class="stage" aria-label="Live view">
+      <div class="video-wrap" id="video-wrap">
+        <video id="video" muted autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+        <div class="badge" id="video-badge">Waiting for video…</div>
+      </div>
+    </section>
+    <div class="stage-foot">
+      <span class="muted" id="video-info">H.264 1080p · Waiting for device</span>
+      <span class="muted" id="session-info">Session not started</span>
+    </div>
+
+    <aside class="panel" aria-label="Model parameters">
+      <section class="card params-card">
+        <div class="card-head">
+          <h2>Model parameters</h2>
+          <span class="muted" id="params-state">—</span>
+        </div>
+        <div id="params" class="params"></div>
+        <p class="hint">Parameters are sent over the UDP control channel and applied at frame boundaries; the process is not restarted.</p>
+      </section>
+    </aside>
+
+    <section class="logs" aria-label="Device log">
+      <div class="logs-head">
+        <h2>Device log</h2>
+        <div class="logs-tools">
+          <label class="checkbox"><input type="checkbox" id="log-follow" checked> Follow</label>
+          <button id="log-clear" class="ghost small">Clear</button>
+        </div>
+      </div>
+      <ol id="log-list" class="log-list"></ol>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/vendor/jmuxer.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

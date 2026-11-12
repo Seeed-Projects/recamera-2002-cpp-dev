@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "reCamera demo manifest",
+  "type": "object",
+  "required": ["schema_version", "name", "version", "device", "build", "runtime", "evaluation"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "name": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{1,63}$"},
+    "version": {"type": "string", "minLength": 1},
+    "device": {
+      "type": "object",
+      "required": ["model"],
+      "properties": {
+        "model": {"type": "string", "minLength": 1},
+        "arch": {"type": "string"},
+        "os_min": {"type": "string"}
+      }
+    },
+    "build": {
+      "type": "object",
+      "required": ["kind", "binary"],
+      "properties": {
+        "kind": {"enum": ["cpp", "cmake", "prebuilt", "script"]},
+        "binary": {"type": "string", "minLength": 1},
+        "source_dir": {"type": "string"},
+        "sources": {"type": "array", "items": {"type": "string"}},
+        "artifact": {"type": "string"},
+        "script": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "include_dirs": {"type": "array", "items": {"type": "string"}},
+        "lib_dirs": {"type": "array", "items": {"type": "string"}},
+        "libs": {"type": "array", "items": {"type": "string"}},
+        "cflags": {"type": "array", "items": {"type": "string"}},
+        "ldflags": {"type": "array", "items": {"type": "string"}},
+        "defines": {"type": "array", "items": {"type": "string"}},
+        "cmake_args": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["executable"],
+      "properties": {
+        "executable": {"type": "string", "minLength": 1, "pattern": "^[^/]+$"},
+        "args": {"type": "array", "items": {"type": "string"}},
+        "env": {"type": "object", "additionalProperties": {"type": "string"}},
+        "sudo": {"type": "boolean"},
+        "long_running": {"type": "boolean"},
+        "requires_camera": {"type": "boolean"},
+        "timeout_s": {"type": "integer", "minimum": 1, "maximum": 3600},
+        "services_stop": {"type": "array", "items": {"type": "string"}},
+        "services_start": {"type": "array", "items": {"type": "string"}},
+        "expect_stdout": {"type": "array", "items": {"type": "string"}},
+        "files": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "live": {
+      "type": "object",
+      "required": ["transport", "video"],
+      "properties": {
+        "transport": {"enum": ["udp"]},
+        "implemented": {"type": "boolean"},
+        "video": {
+          "type": "object",
+          "required": ["codec", "width", "height", "fps"],
+          "properties": {
+            "codec": {"enum": ["h264"]},
+            "width": {"type": "integer", "minimum": 160, "maximum": 1920},
+            "height": {"type": "integer", "minimum": 120, "maximum": 1080},
+            "fps": {"type": "integer", "minimum": 1, "maximum": 60},
+            "bitrate_kbps": {"type": "integer", "minimum": 500, "maximum": 30000}
+          }
+        },
+        "udp": {
+          "type": "object",
+          "properties": {
+            "video_port": {"type": "integer", "minimum": 1, "maximum": 65535},
+            "control_port": {"type": "integer", "minimum": 1, "maximum": 65535},
+            "max_payload": {"type": "integer", "minimum": 576, "maximum": 65000},
+            "snapshot_fps": {"type": "integer", "minimum": 0, "maximum": 5}
+          }
+        },
+        "perf": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "max_result_age_ms": {"type": "number", "minimum": 0},
+            "min_detect_fps": {"type": "number", "minimum": 0},
+            "min_video_fps": {"type": "number", "minimum": 0}
+          }
+        },
+        "model": {
+          "type": "object",
+          "properties": {
+            "input_width": {"type": "integer", "minimum": 32, "maximum": 1920},
+            "input_height": {"type": "integer", "minimum": 32, "maximum": 1920},
+            "preprocess": {"enum": ["stretch", "letterbox", "crop"]},
+            "scale": {"type": "number", "exclusiveMinimum": 0},
+            "pad_x": {"type": "integer", "minimum": 0},
+            "pad_y": {"type": "integer", "minimum": 0}
+          }
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": {"enum": ["number", "integer", "boolean", "string", "enum"]},
+              "min": {"type": "number"},
+              "max": {"type": "number"},
+              "step": {"type": "number"},
+              "default": {},
+              "enum": {"type": "array"},
+              "label": {"type": "string"},
+              "apply": {"enum": ["device", "host"]}
+            }
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "required": ["task"],
+      "properties": {
+        "task": {"type": "string"},
+        "thresholds": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}}
+      }
+    },
+    "model": {
+      "type": ["object", "null"],
+      "required": ["file"],
+      "properties": {
+        "file": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "size": {"type": "integer", "minimum": 1},
+        "task": {"type": "string"},
+        "conversion": {
+          "type": "object",
+          "properties": {
+            "onnx_sha256": {"type": "string"},
+            "dataset": {"type": "string"},
+            "input_size": {"type": "array", "items": {"type": "integer"}},
+            "layout": {"type": "string"}
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "camera": {"type": "boolean"},
+        "video": {"type": "boolean"},
+        "images": {"type": "boolean"}
+      }
+    },
+    "smoke": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"enum": ["host-logic", "mock", "none"]},
+        "command": {"type": "array", "items": {"type": "string"}},
+        "fixtures": {"type": "array", "items": {"type": "string"}},
+        "timeout_s": {"type": "integer", "minimum": 1, "maximum": 3600},
+        "expect_stdout": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "required_stages": {
+          "type": "array",
+          "items": {"enum": ["static", "offline", "host-baseline", "device-upload", "device-run", "task-quality"]}
+        }
+      }
+    },
+    "toolchain": {
+      "type": "object",
+      "properties": {
+        "lock": {"type": "string"},
+        "strict": {"type": "boolean"}
+      }
+    }
+  }
+}

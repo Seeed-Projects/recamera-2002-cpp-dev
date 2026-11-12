@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.13)
+project({{NAME}} C CXX)
+
+add_executable({{BINARY}} main.cpp live_udp.cpp)
+target_compile_features({{BINARY}} PRIVATE cxx_std_17)
+target_compile_options({{BINARY}} PRIVATE -O2 -Wall -Wextra)
+find_package(Threads REQUIRED)
+find_library(ATOMIC_LIBRARY atomic)
+if(ATOMIC_LIBRARY)
+  target_link_libraries({{BINARY}} PRIVATE Threads::Threads ${ATOMIC_LIBRARY})
+else()
+  target_link_libraries({{BINARY}} PRIVATE Threads::Threads)
+endif()

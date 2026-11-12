@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "base_url": "https://files.seeedstudio.com/wiki/reCamera/models/",
+  "assets": {
+    "yolo11n": {
+      "file": "yolo11n_cv181x_int8.cvimodel",
+      "sha256": "6aab4967c33ffac9b64f7e8a26956d620c275fc54c18d6de5c2268cff819f529",
+      "size": 3130896,
+      "task": "detection",
+      "notes": "YOLO11n INT8, COCO 80 classes",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "AGPL-3.0 (Ultralytics YOLO); confirm before redistribution"
+    },
+    "yolov8n": {
+      "file": "yolov8n_cv181x_int8.cvimodel",
+      "sha256": "af1fda25c20f48b2873910fac3bb41fecac6a110ba423401741aa1b363602f78",
+      "size": 3608840,
+      "task": "detection",
+      "notes": "YOLOv8n INT8, COCO 80 classes",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "AGPL-3.0 (Ultralytics YOLO); confirm before redistribution"
+    },
+    "person": {
+      "file": "person_cv181x_int8.cvimodel",
+      "sha256": "338055e9c96dbaa01b8703b14173beb1f7f2e64a9f3d75fb41fe4e333eeb50de",
+      "size": 2900928,
+      "task": "detection",
+      "notes": "person detector, single class",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "Seeed-hosted asset; provenance to be confirmed"
+    },
+    "gender": {
+      "file": "gender_cv181x_int8.cvimodel",
+      "sha256": "6b8dc539b4251971df102d7d1173e8f4a912ec9ad07f6006c1588c99b88bdbca",
+      "size": 817496,
+      "task": "classification",
+      "notes": "face crop classifier",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "Seeed-hosted asset; provenance to be confirmed"
+    },
+    "gesture": {
+      "file": "gesture_cv181x_int8.cvimodel",
+      "sha256": "80c722223cf8481e9e332a6d99c2791edb6fb6bc8679287985d6f39e82b2b656",
+      "size": 2199944,
+      "task": "detection",
+      "notes": "hand gesture detector",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "Seeed-hosted asset; provenance to be confirmed"
+    },
+    "digital_meter": {
+      "file": "digital_meter_cv181x_int8.cvimodel",
+      "sha256": "3c5e8226a702bd1ed843d7655995854a577e78a0a14ffef25e2c23ffea12868c",
+      "size": 2217272,
+      "task": "detection",
+      "notes": "meter digit reader pipeline",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "Seeed-hosted asset; provenance to be confirmed"
+    },
+    "yolo11n_drone": {
+      "file": "yolo11n_drone_int8_sym.cvimodel",
+      "sha256": "1eeca23558f40b9bf6a45de43eb9bacfd416473126318a699f01e8e7aa4d9dfd",
+      "size": 3080792,
+      "task": "detection",
+      "notes": "drone detector, INT8 symmetric",
+      "source": "https://files.seeedstudio.com/wiki/reCamera/models/",
+      "license": "AGPL-3.0 (Ultralytics YOLO); confirm before redistribution"
+    }
+  },
+  "notes": [
+    "Official Seeed download URLs; hashes recorded 2026-10-23.",
+    "fetch_models.py verifies size and sha256 before writing into a demo.",
+    "Pose and segmentation models need a qtable conversion and are not listed here."
+  ]
+}

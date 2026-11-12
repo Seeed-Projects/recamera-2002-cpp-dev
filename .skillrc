@@ -1,0 +1,23 @@
+# Skill metadata
+VERSION=0.1.1
+SKILL_NAME=recamera-2002-cpp-dev
+MAINTAINER=Seeed Studio
+LICENSE=Apache-2.0
+
+# Auto-update settings
+AUTO_UPDATE_ENABLED=false
+CHECK_WIKI_UPDATES=monthly
+
+# Supported scope
+SUPPORTED_DEVICE=reCamera 2002
+SUPPORTED_CHIP=SG200X
+SUPPORTED_OS=>=0.2.4
+SUPPORTED_AGENTS=claude-code,codex,gemini-cli
+UNSUPPORTED_DEVICE=reCamera Pro (RV1126B)
+
+# Validation settings
+VALIDATE_BEFORE_COMMIT=true
+REQUIRE_TESTS=true
+
+# Last update
+LAST_UPDATE=2026-11-12

@@ -1,0 +1,210 @@
+{
+  "branch": "docusaurus-version",
+  "generated_at": "2026-10-22T04:39:08Z",
+  "pages": [
+    {
+      "area": "Quick start",
+      "path": "reCamera_Basic/getting_start/reCamera_2002_series/quick_start_guide.md"
+    },
+    {
+      "area": "Warranty",
+      "path": "reCamera_Basic/getting_start/reCamera_2002_series/reCamera_warranty.md"
+    },
+    {
+      "area": "Hardware/spec",
+      "path": "reCamera_Basic/hardware_and_specs/reCamera_2002_series.md"
+    },
+    {
+      "area": "Hardware/spec",
+      "path": "reCamera_gimbal.md"
+    },
+    {
+      "area": "Hardware/spec",
+      "path": "reCamera_hq_poe.md"
+    },
+    {
+      "area": "HQ PoE",
+      "path": "reCamera_Basic/getting_start/reCamera_hq_poe/reCamera_hq_poe_start.md"
+    },
+    {
+      "area": "HQ PoE",
+      "path": "reCamera_hq_poe_microscope_demo.md"
+    },
+    {
+      "area": "Gimbal",
+      "path": "reCamera_Basic/getting_start/reCamera_gimbal/reCamera_gimbal.md"
+    },
+    {
+      "area": "Gimbal",
+      "path": "gimbal_development_c.md"
+    },
+    {
+      "area": "Gimbal",
+      "path": "gimbal_node_red.md"
+    },
+    {
+      "area": "Gimbal",
+      "path": "PID_adjustment.md"
+    },
+    {
+      "area": "Wi-Fi HaLow",
+      "path": "modules/wifi_halow/wifi_halow_qucik_start.md"
+    },
+    {
+      "area": "ONVIF",
+      "path": "reCamera_Basic/guides/getting_started_onvif.md"
+    },
+    {
+      "area": "OS structure",
+      "path": "reCamera_Basic/software_documents/os_structure.md"
+    },
+    {
+      "area": "Linux basics",
+      "path": "reCamera_Basic/software_documents/linux_fundamentals.md"
+    },
+    {
+      "area": "Static IP",
+      "path": "reCamera_Basic/software_documents/configure_static_ip_on_recamera.md"
+    },
+    {
+      "area": "OS version control",
+      "path": "reCamera_Basic/software_documents/os_version_control.md"
+    },
+    {
+      "area": "C/C++ dev",
+      "path": "reCamera_Basic/software_documents/develop_with_c_cpp.md"
+    },
+    {
+      "area": "C++ YOLO HTTP",
+      "path": "reCamera_Basic/software_documents/Real_time_YOLO_object_detection_using_reCamera_based_on_Cpp.md"
+    },
+    {
+      "area": "Auto start",
+      "path": "reCamera_Basic/software_documents/Make_the_Cpp_program_auto_start_on_boot.md"
+    },
+    {
+      "area": "Node-RED dev",
+      "path": "reCamera_Basic/software_documents/develop_with_nodered.md"
+    },
+    {
+      "area": "XIAO HTTP",
+      "path": "reCamera_Basic/software_documents/reCamera_connects_to_Xiao_via_HTTP.md"
+    },
+    {
+      "area": "On-device models",
+      "path": "reCamera_Basic/ai_model_deployment/on_device_model.md"
+    },
+    {
+      "area": "Model conversion",
+      "path": "reCamera_Basic/ai_model_deployment/model_conversion_guide.md"
+    },
+    {
+      "area": "Model conversion",
+      "path": "Custom_model_conversion.md"
+    },
+    {
+      "area": "Model conversion",
+      "path": "model_export_cvimodel_online.md"
+    },
+    {
+      "area": "FAQ",
+      "path": "reCamera_Basic/faqs/faqs.md"
+    },
+    {
+      "area": "Demo (run)",
+      "path": "reCamera_Basic/application/UDP_Face_Analysis.md"
+    },
+    {
+      "area": "Demo (run)",
+      "path": "yolo_benchmark.md"
+    },
+    {
+      "area": "Demo (voice/VLM)",
+      "path": "reCamera_Basic/application/AI_Voice_Assistant.md"
+    },
+    {
+      "area": "Demo (voice/VLM)",
+      "path": "reCamera_Basic/application/recamera_jetson_vl.md"
+    },
+    {
+      "area": "Demo (streaming)",
+      "path": "reCamera_Basic/application/RTSP_to_WebRTC.md"
+    },
+    {
+      "area": "Demo (vision/NPU)",
+      "path": "reCamera_Basic/application/deploy_monocular_depth_fastdepth.md"
+    },
+    {
+      "area": "Demo (vision/NPU)",
+      "path": "reCamera_Basic/application/hand_gesture.md"
+    },
+    {
+      "area": "Demo (vision/NPU)",
+      "path": "reCamera_Basic/application/qrcode_rec.md"
+    },
+    {
+      "area": "Demo (vision/NPU)",
+      "path": "reCamera_Basic/application/reCamera_Motion_Detection.md"
+    },
+    {
+      "area": "Demo (vision/NPU)",
+      "path": "reCamera_Basic/application/Use_the_body-sensing_function.md"
+    },
+    {
+      "area": "Demo (peripherals/gimbal)",
+      "path": "reCamera_Basic/application/OpenClaw_reCamera-Gimbal.md"
+    },
+    {
+      "area": "Demo (peripherals/gimbal)",
+      "path": "reCamera_Basic/application/picoclaw_gimbal.md"
+    },
+    {
+      "area": "Demo (peripherals/gimbal)",
+      "path": "reCamera_Basic/application/Using_Stream_Deck_to_control_reCamera_Gimbal.md"
+    },
+    {
+      "area": "Demo (peripherals/audio)",
+      "path": "reCamera_Basic/application/reCamera_reSpeaker.md"
+    },
+    {
+      "area": "Demo (platform integration)",
+      "path": "reCamera_Basic/application/Getting_started_in_Telegram.md"
+    },
+    {
+      "area": "Demo (platform integration)",
+      "path": "Getting_started_in_Wechat_work.md"
+    },
+    {
+      "area": "Demo (platform integration)",
+      "path": "Getting_started_for_n8n.md"
+    },
+    {
+      "area": "Demo (platform integration)",
+      "path": "Getting_started_for_Home_Assistant.md"
+    },
+    {
+      "area": "Demo (platform integration)",
+      "path": "Integration_of_real-time_heat_map_with_Grafana_data_dashboard.md"
+    },
+    {
+      "area": "Demo (Meshtastic/remote)",
+      "path": "reCamera_Basic/application/AI_Human_Detection_Meshtastic_Broadcast.md"
+    },
+    {
+      "area": "Demo (Meshtastic/remote)",
+      "path": "recamera_meshtastic_ha_security_system.md"
+    },
+    {
+      "area": "Demo (Meshtastic/remote)",
+      "path": "AI_Remote_Wireless_Monitor_System.md"
+    },
+    {
+      "area": "Demo (application workflow)",
+      "path": "reCamera_Basic/application/Car_parking_management.md"
+    }
+  ],
+  "prefix": "sites/en/docs/Edge/reCamera/",
+  "repository": "Seeed-Studio/wiki-documents",
+  "schema_version": 1,
+  "snapshot_date": "2026-09-18"
+}

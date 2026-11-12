@@ -1,0 +1,10 @@
+{
+  "source": "TODO: model card, dataset URL, or official demo page",
+  "version": "TODO",
+  "license": "TODO",
+  "samples": 0,
+  "selection": "TODO: positive, negative and boundary frames from the same sequence",
+  "cache_path": "~/reCamera_demo/datasets/TODO",
+  "class_map": {},
+  "synthesized_video": false
+}

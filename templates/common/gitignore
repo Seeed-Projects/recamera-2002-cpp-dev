@@ -1,0 +1,7 @@
+dist/
+build/
+eval/baseline/
+eval/recamera/
+__pycache__/
+*.pyc
+.pytest_cache/
